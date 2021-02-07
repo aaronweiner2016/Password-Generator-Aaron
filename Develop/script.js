@@ -69,17 +69,17 @@ function generatePassword() {           //begins function to set perameters of t
     totalArr = totalArr.concat(numbers)     //if true(okay button) empty array will add numbers, if false(cancel) it wont add it
   }
 
-  if(totalArr.length === 0){
+  if(totalArr.length === 0){      //if after all the confirm boxes go through and all were false(cancel), the empty array will equal zero meaning nothing was chosen
     alert("You did not choose any character types");
     generatePassword();
   }
 
-  for(var i = 0; i < howManyChar; i++){
+  for(var i = 0; i < howManyChar; i++){     //randomize the first character then i++(i=i+1) to the next number, each time generating a new character, all the way up to the amount of characters you chose your password to have
     var randomIndex = Math.floor(Math.random() * totalArr.length);
     var randomChar = totalArr[randomIndex];
     passwordPiece += randomChar;
     
   }
   
-  return(passwordPiece);
+  return(passwordPiece);    //return the results to the begining
 }
