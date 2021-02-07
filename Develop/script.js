@@ -1,14 +1,14 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate"); //grab generate button
-
-var capLetters = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "L", "K", "J", "H", "G", "F", "D", "S", "A", "Z", "X", "C", "V", "B", "N", "M"];
               //array of upper case letters
-var lowerCaseLetters = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "l", "k", "j", "h", "g", "f", "d", "s", "a", "z", "x", "c", "v", "b", "n", "m"];
+var capLetters = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "L", "K", "J", "H", "G", "F", "D", "S", "A", "Z", "X", "C", "V", "B", "N", "M"];
               //array of lower case letters
-var symbols = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-"];
+var lowerCaseLetters = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "l", "k", "j", "h", "g", "f", "d", "s", "a", "z", "x", "c", "v", "b", "n", "m"];
               //array of symbols
+var symbols = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-"];
+              //array of numbers
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
+              
 var passwordPrompt;
 
 var howManyChar;
@@ -21,9 +21,9 @@ var userChoiceThree;
 
 var userChoiceFour;
 
-var totalArr = [];
+var totalArr = []; //this array will be a base for if user says "true", they want to include or not include a certain type of character 
 
-var randomChar;
+var randomChar; //is a variable that the random math equation password generator can store the reseult into
 
 //for loop
 //if statement for if 0,1,2 are yes or some no then do math to show answer to that
@@ -31,7 +31,7 @@ var randomChar;
 
 
 // Write password to the #password input
-function writePassword() {
+function writePassword() {  //Begins function when clicking generateBtn
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
     if(password){
@@ -40,7 +40,7 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword)
+generateBtn.addEventListener("click", writePassword)  //Enables button to be clicked
 
 
 function generatePassword() {
