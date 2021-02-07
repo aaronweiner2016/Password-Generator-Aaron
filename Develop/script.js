@@ -1,12 +1,12 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate"); //grab generate button
 
 var capLetters = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "L", "K", "J", "H", "G", "F", "D", "S", "A", "Z", "X", "C", "V", "B", "N", "M"];
-
+              //array of upper case letters
 var lowerCaseLetters = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "l", "k", "j", "h", "g", "f", "d", "s", "a", "z", "x", "c", "v", "b", "n", "m"];
-
+              //array of lower case letters
 var symbols = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-"];
-
+              //array of symbols
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 var passwordPrompt;
@@ -26,7 +26,7 @@ var totalArr = [];
 var randomChar;
 
 //for loop
-//if statement for if 0,1,2 are yes or some no then do math to show answet to that
+//if statement for if 0,1,2 are yes or some no then do math to show answer to that
 
 
 
@@ -92,17 +92,8 @@ function generatePassword() {
     var randomIndex = Math.floor(Math.random() * totalArr.length);
     randomChar = totalArr[randomIndex];
     passwordPiece += randomChar;
+    
   }
   
   return(passwordPiece);
-
-
-
-  // window.alert(
-    // "Password: " + passwordString.concat(randomChar)  );
 }
-
-
-
-//need to concat rendomChar to to passwordstring
-//return password out of function after for loop
