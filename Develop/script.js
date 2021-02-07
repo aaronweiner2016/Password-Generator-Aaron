@@ -8,22 +8,11 @@ var lowerCaseLetters = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "l", "
 var symbols = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-"];
               //array of numbers
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-              
-var passwordPrompt;
-
-var howManyChar;
-
-var userChoiceOne;
-
-var userChoiceTwo;
-
-var userChoiceThree;
-
-var userChoiceFour;
 
 var totalArr = []; //this array will be a base for if user says "true", they want to include or not include a certain type of character 
 
-var randomChar; //is a variable that the random math equation password generator can store the reseult into
+
+var passwordPiece = "";
 
 //for loop
 //if statement for if 0,1,2 are yes or some no then do math to show answer to that
@@ -43,39 +32,39 @@ function writePassword() {  //Begins function when clicking generateBtn
 generateBtn.addEventListener("click", writePassword)  //Enables button to be clicked
 
 
-function generatePassword() {
+function generatePassword() { //begins function to set perameters of the password
  
-  passwordPrompt = window.confirm("Make a password?");
-    if(!passwordPrompt){
+  var passwordPrompt = window.confirm("Make a password?"); //asking if you want to create the password
+    if(!passwordPrompt){ //if false return out of function(cancel)
       return;
     }
 
-  howManyChar = parseInt(window.prompt("Choose between 8 and 128"));
+  var howManyChar = parseInt(window.prompt("Choose between 8 and 128")); //parseInt is changing howManyChar into a number
 
-  if(howManyChar < 8 || howManyChar > 128){
-    alert("Invalid amount of characters");
+  if(howManyChar < 8 || howManyChar > 128){ //making you choose a password length between 8 and 128
+    alert("Invalid amount of characters"); //alert will pop up if password length choice is not within 8 and 128
     generatePassword();
   } 
   
-  userChoiceOne = window.confirm("Do you want capitol letters?");
+  var userChoiceOne = window.confirm("Do you want capitol letters?");
  
   if(userChoiceOne){
     totalArr = totalArr.concat(capLetters)
   }
 
-  userChoiceTwo = window.confirm("Do you want lower case letters?");
+  var userChoiceTwo = window.confirm("Do you want lower case letters?");
   
   if(userChoiceTwo){
     totalArr = totalArr.concat(lowerCaseLetters)
   }
 
-  userChoiceThree = window.confirm("Do you want to include symbols?");
+  var userChoiceThree = window.confirm("Do you want to include symbols?");
 
   if(userChoiceThree){
     totalArr = totalArr.concat(symbols)
   }
 
-  userChoiceFour = window.confirm("Do you want to add numbers?");
+  var userChoiceFour = window.confirm("Do you want to add numbers?");
 
   if(userChoiceFour){
     totalArr = totalArr.concat(numbers)
@@ -86,11 +75,9 @@ function generatePassword() {
     generatePassword();
   }
 
-  var passwordPiece = "";
-
   for(var i = 0; i < howManyChar; i++){
     var randomIndex = Math.floor(Math.random() * totalArr.length);
-    randomChar = totalArr[randomIndex];
+    var randomChar = totalArr[randomIndex];
     passwordPiece += randomChar;
     
   }
