@@ -11,7 +11,6 @@ var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 var totalArr = []; //this array will be a base for if user says "true", they want to include or not include a certain type of character 
 
-
 var passwordPiece = "";
 
 //for loop
@@ -32,42 +31,42 @@ function writePassword() {  //Begins function when clicking generateBtn
 generateBtn.addEventListener("click", writePassword)  //Enables button to be clicked
 
 
-function generatePassword() { //begins function to set perameters of the password
+function generatePassword() {           //begins function to set perameters of the password
  
-  var passwordPrompt = window.confirm("Make a password?"); //asking if you want to create the password
-    if(!passwordPrompt){ //if false return out of function(cancel)
+  var passwordPrompt = window.confirm("Make a password?");          //asking if you want to create the password
+    if(!passwordPrompt){          //if false return out of function(cancel)
       return;
     }
 
-  var howManyChar = parseInt(window.prompt("Choose between 8 and 128")); //parseInt is changing howManyChar into a number
+  var howManyChar = parseInt(window.prompt("Choose between 8 and 128"));         //parseInt is changing howManyChar into a number
 
-  if(howManyChar < 8 || howManyChar > 128){ //making you choose a password length between 8 and 128
-    alert("Invalid amount of characters"); //alert will pop up if password length choice is not within 8 and 128
+  if(howManyChar < 8 || howManyChar > 128){       //making you choose a password length between 8 and 128
+    alert("Invalid amount of characters");      //alert will pop up if password length choice is not within 8 and 128
     generatePassword();
   } 
   
   var userChoiceOne = window.confirm("Do you want capitol letters?");
  
   if(userChoiceOne){
-    totalArr = totalArr.concat(capLetters)
+    totalArr = totalArr.concat(capLetters)    //if true(okay button) empty array will add capLetters, if false(cancel) it wont add it
   }
 
   var userChoiceTwo = window.confirm("Do you want lower case letters?");
   
   if(userChoiceTwo){
-    totalArr = totalArr.concat(lowerCaseLetters)
+    totalArr = totalArr.concat(lowerCaseLetters)    //if true(okay button) empty array will add lowerCaseLetters, if false(cancel) it wont add it
   }
 
   var userChoiceThree = window.confirm("Do you want to include symbols?");
 
   if(userChoiceThree){
-    totalArr = totalArr.concat(symbols)
+    totalArr = totalArr.concat(symbols)    //if true(okay button) empty array will add symbols, if false(cancel) it wont add it
   }
 
   var userChoiceFour = window.confirm("Do you want to add numbers?");
 
   if(userChoiceFour){
-    totalArr = totalArr.concat(numbers)
+    totalArr = totalArr.concat(numbers)     //if true(okay button) empty array will add numbers, if false(cancel) it wont add it
   }
 
   if(totalArr.length === 0){
