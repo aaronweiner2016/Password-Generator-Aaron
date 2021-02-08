@@ -9,10 +9,6 @@ var symbols = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", 
               //array of numbers
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-var totalArr = []; //this array will be a base for if user says "true", they want to include or not include a certain type of character 
-
-var passwordPiece = "";
-
 var howManyChar;
 
 var userChoiceOne;
@@ -23,15 +19,8 @@ var userChoiceThree;
 
 var userChoiceFour;
 
-
-
-//for loop
-//if statement for if 0,1,2 are yes or some no then do math to show answer to that
-
-
-
 // Write password to the #password input
-function writePassword() {  //Begins function when clicking generateBtn
+function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
     if(password){
@@ -43,8 +32,8 @@ function writePassword() {  //Begins function when clicking generateBtn
 generateBtn.addEventListener("click", writePassword)  //Enables button to be clicked
 
 
-function generatePassword() {           //begins function to set perameters of the password
- 
+function generatePassword() {          //begins function to set perameters of the password
+
   var passwordPrompt = window.confirm("Make a password?");          //asking if you want to create the password
     if(!passwordPrompt){          //if false return out of function(cancel)
       return;
@@ -57,8 +46,12 @@ function generatePassword() {           //begins function to set perameters of t
     generatePassword();
   } 
   
+  var totalArr = []; //this array will be a base for if user says "true", they want to include or not include a certain type of character 
+  
+  
   userChoiceOne = window.confirm("Do you want capitol letters?");
  
+
   if(userChoiceOne){
     totalArr = totalArr.concat(capLetters)    //if true(okay button) empty array will add capLetters, if false(cancel) it wont add it
   }
@@ -86,12 +79,15 @@ function generatePassword() {           //begins function to set perameters of t
     generatePassword();
   }
 
+  var passwordPiece = "";
+
   for(var i = 0; i < howManyChar; i++){     //randomize the first character then i++(i=i+1) to the next number, each time generating a new character, all the way up to the amount of characters you chose your password to have
     var randomIndex = Math.floor(Math.random() * totalArr.length);
     var randomChar = totalArr[randomIndex];
     passwordPiece += randomChar;
   }
   
-  return(passwordPiece);
   
+
+  return(passwordPiece);
 }
