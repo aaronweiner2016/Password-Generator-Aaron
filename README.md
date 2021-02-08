@@ -9,3 +9,6 @@
 #About this page
 
     This website is a password generator that allows you to choose between 8 and 128 characters. You have the options of choose symbols, upper case letters, lower case letters and numbers to create whatever password you desire.
+
+
+![Password Generator](https://user-images.githubusercontent.com/76064269/107278513-e5660480-6a23-11eb-9e2b-33f5070c87f6.gif)
