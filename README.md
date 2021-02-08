@@ -1,4 +1,5 @@
 # Password-Generator-Aaron
+<<<<<<< HEAD
 
 #Personal benefits of this page
 

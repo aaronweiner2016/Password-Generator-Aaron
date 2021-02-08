@@ -13,6 +13,18 @@ var totalArr = []; //this array will be a base for if user says "true", they wan
 
 var passwordPiece = "";
 
+var howManyChar;
+
+var userChoiceOne;
+
+var userChoiceTwo;
+
+var userChoiceThree;
+
+var userChoiceFour;
+
+
+
 //for loop
 //if statement for if 0,1,2 are yes or some no then do math to show answer to that
 
@@ -38,32 +50,32 @@ function generatePassword() {           //begins function to set perameters of t
       return;
     }
 
-  var howManyChar = parseInt(window.prompt("Choose between 8 and 128"));         //parseInt is changing howManyChar into a number
+  howManyChar = parseInt(window.prompt("Choose between 8 and 128"));         //parseInt is changing howManyChar into a number
 
   if(howManyChar < 8 || howManyChar > 128){       //making you choose a password length between 8 and 128
     alert("Invalid amount of characters");      //alert will pop up if password length choice is not within 8 and 128
     generatePassword();
   } 
   
-  var userChoiceOne = window.confirm("Do you want capitol letters?");
+  userChoiceOne = window.confirm("Do you want capitol letters?");
  
   if(userChoiceOne){
     totalArr = totalArr.concat(capLetters)    //if true(okay button) empty array will add capLetters, if false(cancel) it wont add it
   }
 
-  var userChoiceTwo = window.confirm("Do you want lower case letters?");
+  userChoiceTwo = window.confirm("Do you want lower case letters?");
   
   if(userChoiceTwo){
     totalArr = totalArr.concat(lowerCaseLetters)    //if true(okay button) empty array will add lowerCaseLetters, if false(cancel) it wont add it
   }
 
-  var userChoiceThree = window.confirm("Do you want to include symbols?");
+  userChoiceThree = window.confirm("Do you want to include symbols?");
 
   if(userChoiceThree){
     totalArr = totalArr.concat(symbols)    //if true(okay button) empty array will add symbols, if false(cancel) it wont add it
   }
 
-  var userChoiceFour = window.confirm("Do you want to add numbers?");
+  userChoiceFour = window.confirm("Do you want to add numbers?");
 
   if(userChoiceFour){
     totalArr = totalArr.concat(numbers)     //if true(okay button) empty array will add numbers, if false(cancel) it wont add it
@@ -78,8 +90,8 @@ function generatePassword() {           //begins function to set perameters of t
     var randomIndex = Math.floor(Math.random() * totalArr.length);
     var randomChar = totalArr[randomIndex];
     passwordPiece += randomChar;
-    
   }
   
-  return(passwordPiece);    //return the results to the begining
+  return(passwordPiece);
+  
 }
