@@ -26,6 +26,7 @@ function writePassword() {
     if(password){
   passwordText.value = password;
     }
+    passwordText.setAttribute("style", "color: blue; font-size: 30px; background-color: yellow;")
 }
 
 // Add event listener to generate button
@@ -33,46 +34,40 @@ generateBtn.addEventListener("click", writePassword)  //Enables button to be cli
 
 
 function generatePassword() {          //begins function to set perameters of the password
-
+console.log(generatePassword);
   var passwordPrompt = window.confirm("Make a password?");          //asking if you want to create the password
     if(!passwordPrompt){          //if false return out of function(cancel)
       return;
     }
 
   howManyChar = parseInt(window.prompt("Choose between 8 and 128"));         //parseInt is changing howManyChar into a number
-
-  if(howManyChar < 8 || howManyChar > 128){       //making you choose a password length between 8 and 128
-    alert("Invalid amount of characters");      //alert will pop up if password length choice is not within 8 and 128
-    generatePassword();
-  } 
+    if(howManyChar < 8 || howManyChar > 128){       //making you choose a password length between 8 and 128
+      alert("Invalid amount of characters");      //alert will pop up if password length choice is not within 8 and 128
+      generatePassword();
+    } 
   
   var totalArr = []; //this array will be a base for if user says "true", they want to include or not include a certain type of character 
   
   
   userChoiceOne = window.confirm("Do you want capitol letters?");
- 
-
-  if(userChoiceOne){
-    totalArr = totalArr.concat(capLetters)    //if true(okay button) empty array will add capLetters, if false(cancel) it wont add it
-  }
+    if(userChoiceOne){
+      totalArr = totalArr.concat(capLetters)    //if true(okay button) empty array will add capLetters, if false(cancel) it wont add it
+    }
 
   userChoiceTwo = window.confirm("Do you want lower case letters?");
-  
-  if(userChoiceTwo){
-    totalArr = totalArr.concat(lowerCaseLetters)    //if true(okay button) empty array will add lowerCaseLetters, if false(cancel) it wont add it
-  }
+    if(userChoiceTwo){
+      totalArr = totalArr.concat(lowerCaseLetters)    //if true(okay button) empty array will add lowerCaseLetters, if false(cancel) it wont add it
+    }
 
   userChoiceThree = window.confirm("Do you want to include symbols?");
-
-  if(userChoiceThree){
-    totalArr = totalArr.concat(symbols)    //if true(okay button) empty array will add symbols, if false(cancel) it wont add it
-  }
-
+    if(userChoiceThree){
+      totalArr = totalArr.concat(symbols)    //if true(okay button) empty array will add symbols, if false(cancel) it wont add it
+    }
+  
   userChoiceFour = window.confirm("Do you want to add numbers?");
-
-  if(userChoiceFour){
-    totalArr = totalArr.concat(numbers)     //if true(okay button) empty array will add numbers, if false(cancel) it wont add it
-  }
+    if(userChoiceFour){
+      totalArr = totalArr.concat(numbers)     //if true(okay button) empty array will add numbers, if false(cancel) it wont add it
+    }
 
   if(totalArr.length === 0){      //if after all the confirm boxes go through and all were false(cancel), the empty array will equal zero meaning nothing was chosen
     alert("You did not choose any character types");
@@ -87,7 +82,5 @@ function generatePassword() {          //begins function to set perameters of th
     passwordPiece += randomChar;
   }
   
-  
-
   return(passwordPiece);
 }
