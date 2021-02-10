@@ -19,6 +19,9 @@ var userChoiceThree;
 
 var userChoiceFour;
 
+var totalArr = []; //this array will be a base for if user says "true", they want to include or not include a certain type of character 
+  
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -34,7 +37,6 @@ generateBtn.addEventListener("click", writePassword)  //Enables button to be cli
 
 
 function generatePassword() {          //begins function to set perameters of the password
-console.log(generatePassword);
   var passwordPrompt = window.confirm("Make a password?");          //asking if you want to create the password
     if(!passwordPrompt){          //if false return out of function(cancel)
       return;
@@ -46,7 +48,6 @@ console.log(generatePassword);
       generatePassword();
     } 
   
-  var totalArr = []; //this array will be a base for if user says "true", they want to include or not include a certain type of character 
   
   
   userChoiceOne = window.confirm("Do you want capitol letters?");
