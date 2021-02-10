@@ -5,4 +5,5 @@ My motivation for doing this project was to understand how to logically format a
 About this page</br>a,/br>
 This website is a password generator that allows you to choose between 8 and 128 characters. You have the options of choose symbols, upper case letters, lower case letters and numbers to create whatever password you desire.</br></br>
 ![Password Generator (1)](https://user-images.githubusercontent.com/76064269/107462197-93a7a200-6b29-11eb-86d5-a890ebc87652.gif)</br>
-[GitHub Repo](https://github.com/aaronweiner2016/Password-Generator-Aaron)
+[GitHub Repo](https://github.com/aaronweiner2016/Password-Generator-Aaron)</br>
+[Website](https://aaronweiner2016.github.io/Password-Generator-Aaron/)
