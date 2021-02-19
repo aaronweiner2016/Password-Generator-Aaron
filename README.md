@@ -7,3 +7,5 @@ This website is a password generator that allows you to choose between 8 and 128
 ![Password Generator (1)](https://user-images.githubusercontent.com/76064269/107462197-93a7a200-6b29-11eb-86d5-a890ebc87652.gif)</br>
 [GitHub Repo](https://github.com/aaronweiner2016/Password-Generator-Aaron)</br>
 [Website](https://aaronweiner2016.github.io/Password-Generator-Aaron/)
+
+[Website](https://aaronweiner2016.github.io/Password-Generator-Aaron/)
